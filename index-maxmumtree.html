@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Aimer1027.GitHub.io.leetcodes by aimer1027</title>
+    <title>Aimer1027.GitHub.io.leetcodes.Maximum-Depth-of-Binary-Tree by aimer1027</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
@@ -11,16 +11,51 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Aimer1027.GitHub.io.leetcodes</h1>
+      <h1 class="project-name">Aimer1027.GitHub.io.leetcodes.Maximum-Depth-of-Binary-Tree</h1>
       <h2 class="project-tagline">aimer&#39;s blog</h2>
     </section>
 
     <section class="main-content">
-      <h1>
-<a id="aimer1027githubio" class="anchor" href="#aimer1027githubio" aria-hidden="true"><span class="octicon octicon-link"></span></a>aimer1027.github.io</h1>
+      <p>Maximum Depth of Binary Tree My Submissions Question</p>
 
-<p>welcome to my blog 
-<a href="https://aimer1027.github.io/index.html">leetcode-2015/11/20</a></p>
+<p>Total Accepted: 102492 Total Submissions: 221648 Difficulty: Easy
+Given a binary tree, find its maximum depth.</p>
+
+<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
+
+<p>Subscribe to see which companies asked this question</p>
+
+<p>source code</p>
+
+<div class="highlight highlight-source-c++"><pre><span class="pl-c">/**</span>
+<span class="pl-c"> * Definition for a binary tree node.</span>
+<span class="pl-c"> * struct TreeNode {</span>
+<span class="pl-c"> *     int val;</span>
+<span class="pl-c"> *     TreeNode *left;</span>
+<span class="pl-c"> *     TreeNode *right;</span>
+<span class="pl-c"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}</span>
+<span class="pl-c"> * };</span>
+<span class="pl-c"> */</span>
+<span class="pl-k">class</span> <span class="pl-en">Solution</span> {
+<span class="pl-k">public:</span>
+    <span class="pl-k">int</span> <span class="pl-en">maxDepth</span>(TreeNode* root) {
+
+       <span class="pl-k">int</span> left , right ;
+
+       left  = <span class="pl-c1">0</span> ;
+       right = <span class="pl-c1">0</span> ;
+
+       <span class="pl-k">if</span>(root == <span class="pl-c1">NULL</span>)
+            <span class="pl-k">return</span> <span class="pl-c1">0</span> ;
+
+       <span class="pl-k">if</span>(root-&gt;left != <span class="pl-c1">NULL</span>)
+          left = <span class="pl-c1">maxDepth</span>(root-&gt;left) ;
+       <span class="pl-k">if</span>(root-&gt;right != <span class="pl-c1">NULL</span>)
+          right = <span class="pl-c1">maxDepth</span>(root-&gt;right) ;
+
+        <span class="pl-k">return</span> <span class="pl-c1">1</span>+ (left &gt;= right? left : right) ;    
+    }
+};</pre></div>
 
       <footer class="site-footer">
 
